@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="39892" started-at="2020-10-16T08:23:04Z" finished-at="2020-10-16T08:23:44Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="39892" started-at="2020-10-16T08:23:04Z" finished-at="2020-10-16T08:23:44Z">
+      <class name="com.qa.hubspot.tests.HomePageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.qa.hubspot.tests.HomePageTest@18be83e4]" name="setup" is-config="true" duration-ms="37788" started-at="2020-10-16T13:53:04Z" finished-at="2020-10-16T13:53:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verify_HomePageTitle_Test()[pri:1, instance:com.qa.hubspot.tests.HomePageTest@18be83e4]" name="verify_HomePageTitle_Test" duration-ms="155" started-at="2020-10-16T13:53:42Z" finished-at="2020-10-16T13:53:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_HomePageTitle_Test -->
+        <test-method status="PASS" signature="verify_HomePageHeader_Test()[pri:2, instance:com.qa.hubspot.tests.HomePageTest@18be83e4]" name="verify_HomePageHeader_Test" duration-ms="189" started-at="2020-10-16T13:53:42Z" finished-at="2020-10-16T13:53:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_HomePageHeader_Test -->
+        <test-method status="PASS" signature="verify_Useraccount_Test()[pri:3, instance:com.qa.hubspot.tests.HomePageTest@18be83e4]" name="verify_Useraccount_Test" duration-ms="281" started-at="2020-10-16T13:53:42Z" finished-at="2020-10-16T13:53:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Useraccount_Test -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.hubspot.tests.HomePageTest@18be83e4]" name="teardown" is-config="true" duration-ms="1445" started-at="2020-10-16T13:53:43Z" finished-at="2020-10-16T13:53:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.qa.hubspot.tests.HomePageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
