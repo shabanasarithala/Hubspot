@@ -4,10 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.qa.hubspot.base.BasePage;
+import com.qa.hubspot.utils.Constants;
+import com.qa.hubspot.utils.ElementUtil;
 
 public class HomePage extends BasePage {
 
 	WebDriver driver;
+	ElementUtil eu;
 
 	By header = By.cssSelector("h1.dashboard-selector__title");
 	By account_avtar = By.id("account-menu-container");
@@ -22,6 +25,7 @@ public class HomePage extends BasePage {
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
+		eu = new ElementUtil(driver);
 	}
 
 	/**
@@ -31,22 +35,23 @@ public class HomePage extends BasePage {
 	 */
 
 	public String get_HomepageTitle() {
-		return driver.getTitle();
+		return eu.waitForTitleToBePresent(Constants.HomePage_Title, 15);
 	}
 
 	public String get_Homepage_Header() {
-		if (driver.findElement(header).isDisplayed()) {
-			return driver.findElement(header).getText();
+		if (eu.isDisplayed(header)) {
+			return eu.get_text(header);
 		} else
 			return null;
 
 	}
 
 	public String Verify_Useraccount() {
+		eu.waitForElementToBePresent(accountName, 10);
+		eu.click(account_avtar);
 
-		driver.findElement(account_avtar).click();
-		if (driver.findElement(username).isDisplayed()) {
-			return driver.findElement(username).getText();
+		if (eu.isDisplayed(accountName)) {
+			return eu.get_text(username);
 		} else
 			return null;
 
