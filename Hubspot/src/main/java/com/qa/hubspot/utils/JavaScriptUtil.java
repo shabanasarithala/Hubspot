@@ -43,7 +43,7 @@ public class JavaScriptUtil {
 
 	public void clickElementByJS(WebElement element) {
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("arguments[0].click();", element);
+		js.executeScript("arguments[0].click();" , element);
 
 	}
 

@@ -16,6 +16,8 @@ public class HomePage extends BasePage {
 	By account_avtar = By.id("account-menu-container");
 	By username = By.className("user-info-name");
 	By accountName = By.className("user-info-email");
+	By primaryContactsLink = By.id( "nav-primary-contacts-branch");
+	By secondaryContactsLink = By.id( "nav-secondary-contacts");
 
 	/**
 	 * constructor of home page
@@ -55,6 +57,24 @@ public class HomePage extends BasePage {
 		} else
 			return null;
 
+	}
+	
+	/**
+	 * here we are using encapsulation concept by making click on contacts method private and calling that private method in public
+	 * go to contacts page method
+	 * @return
+	 */
+	public ContactsPage goToContactsPage() {
+		clickOnContacts();
+		return new ContactsPage(driver);
+	}
+	
+	private void clickOnContacts() {
+		eu.waitForElementToBePresent(primaryContactsLink,  10);
+		eu.click(primaryContactsLink);
+		eu.waitForElementToBePresent(secondaryContactsLink,  5);
+		eu.click(secondaryContactsLink);
+	
 	}
 
 }
