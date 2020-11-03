@@ -15,7 +15,7 @@ public class LogInPage {
 	By usermail = By.id("username");
 	By password = By.id("password");
 	By login_button = By.id("loginBtn");
-	By signup_link = By.linkText("Sign up");
+	By signup_link = By.linkText("Sign up123");
 
 	// constructor of page class
 	public LogInPage(WebDriver driver) {

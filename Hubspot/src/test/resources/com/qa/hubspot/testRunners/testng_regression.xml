@@ -4,15 +4,18 @@
 
 
 <suite name="Hubspot App Regression Test Suite">
+	<listeners>
+		<listener class-name="com.qa.hubspot.TestListeners.PdfListener" />
+		<listener class-name="com.qa.hubspot.TestListeners.ExtentReportListener" />
+	</listeners>
 
- 
+
 	<test name="Regression Functional Test" verbose="2">
- 
+
 		<classes>
 
 			<class name="com.qa.hubspot.tests.LogInPageTest" />
 
-			<class name="com.qa.hubspot.tests.HomePageTest" />
 
 
 		</classes>

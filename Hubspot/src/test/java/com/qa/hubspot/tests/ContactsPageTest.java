@@ -56,7 +56,8 @@ public class ContactsPageTest {
 	
 	@Test(priority = 2 , dataProvider = "getContactsTestData")
 	public void createNewContact_Test(String email , String firstname , String lastname , String jobtitle){
-		contactspage.createNewContact(email, firstname, lastname, jobtitle);
+		String name = contactspage.createNewContact(email, firstname, lastname, jobtitle);
+		Assert.assertEquals(name, firstname +" "+ lastname );
 		
 	}
 	

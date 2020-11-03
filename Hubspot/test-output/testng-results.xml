@@ -1,129 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="188967" started-at="2020-10-29T23:03:55Z" finished-at="2020-10-29T23:07:04Z">
+  <suite name="Hubspot App Regression Test Suite" duration-ms="50753" started-at="2020-11-03T03:57:21Z" finished-at="2020-11-03T03:58:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="188967" started-at="2020-10-29T23:03:55Z" finished-at="2020-10-29T23:07:04Z">
-      <class name="com.qa.hubspot.tests.ContactsPageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.qa.hubspot.tests.ContactsPageTest@66a3ffec]" name="setup" is-config="true" duration-ms="66631" started-at="2020-10-30T04:33:55Z" finished-at="2020-10-30T04:35:02Z">
+    <test name="Regression Functional Test" duration-ms="50753" started-at="2020-11-03T03:57:21Z" finished-at="2020-11-03T03:58:12Z">
+      <class name="com.qa.hubspot.tests.LogInPageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.qa.hubspot.tests.LogInPageTest@2f8f5f62]" name="setup" is-config="true" duration-ms="14412" started-at="2020-11-03T09:27:21Z" finished-at="2020-11-03T09:27:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="verify_ContactsPageTitle_Test()[pri:1, instance:com.qa.hubspot.tests.ContactsPageTest@66a3ffec]" name="verify_ContactsPageTitle_Test" duration-ms="1528" started-at="2020-10-30T04:35:02Z" finished-at="2020-10-30T04:35:03Z">
+        <test-method status="PASS" signature="verifyloginpage_title_Test()[pri:1, instance:com.qa.hubspot.tests.LogInPageTest@2f8f5f62]" name="verifyloginpage_title_Test" duration-ms="2636" started-at="2020-11-03T09:27:36Z" finished-at="2020-11-03T09:27:38Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verify_ContactsPageTitle_Test -->
-        <test-method status="PASS" signature="createNewContact_Test(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.qa.hubspot.tests.ContactsPageTest@66a3ffec]" name="createNewContact_Test" duration-ms="30578" started-at="2020-10-30T04:35:05Z" data-provider="getContactsTestData" finished-at="2020-10-30T04:35:36Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[sree@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[sree]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[divya]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[SAP]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- verifyloginpage_title_Test -->
+        <test-method status="FAIL" signature="verifysignup_link_Test()[pri:2, instance:com.qa.hubspot.tests.LogInPageTest@2f8f5f62]" name="verifysignup_link_Test" duration-ms="266" started-at="2020-11-03T09:27:38Z" finished-at="2020-11-03T09:27:38Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"link text","selector":"Sign up123"}
+  (Session info: chrome=86.0.4240.111)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-OO9JJOQ', ip: '192.168.0.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.111, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\pc\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:50147}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 98eaa383f6eaf162b989281a2092f9fd
+*** Element info: {Using=link text, value=Sign up123}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"Sign up123"}
+  (Session info: chrome=86.0.4240.111)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-OO9JJOQ', ip: '192.168.0.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.111, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\pc\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:50147}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 98eaa383f6eaf162b989281a2092f9fd
+*** Element info: {Using=link text, value=Sign up123}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.qa.hubspot.utils.ElementUtil.get_element(ElementUtil.java:36)
+	at com.qa.hubspot.utils.ElementUtil.isDisplayed(ElementUtil.java:96)
+	at com.qa.hubspot.pages.LogInPage.check_for_signuplink(LogInPage.java:33)
+	at com.qa.hubspot.tests.LogInPageTest.verifysignup_link_Test(LogInPageTest.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createNewContact_Test -->
-        <test-method status="PASS" signature="createNewContact_Test(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.qa.hubspot.tests.ContactsPageTest@66a3ffec]" name="createNewContact_Test" duration-ms="33581" started-at="2020-10-30T04:35:36Z" data-provider="getContactsTestData" finished-at="2020-10-30T04:36:09Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[kundu@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[kundu]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[kittu]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Developer]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- verifysignup_link_Test -->
+        <test-method status="PASS" signature="login_Test()[pri:3, instance:com.qa.hubspot.tests.LogInPageTest@2f8f5f62]" name="login_Test" duration-ms="30645" started-at="2020-11-03T09:27:39Z" finished-at="2020-11-03T09:28:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createNewContact_Test -->
-        <test-method status="PASS" signature="createNewContact_Test(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.qa.hubspot.tests.ContactsPageTest@66a3ffec]" name="createNewContact_Test" duration-ms="24636" started-at="2020-10-30T04:36:09Z" data-provider="getContactsTestData" finished-at="2020-10-30T04:36:34Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[teja@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[sai]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[teja]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Python]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createNewContact_Test -->
-        <test-method status="PASS" signature="createNewContact_Test(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.qa.hubspot.tests.ContactsPageTest@66a3ffec]" name="createNewContact_Test" duration-ms="28088" started-at="2020-10-30T04:36:34Z" data-provider="getContactsTestData" finished-at="2020-10-30T04:37:02Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[jones@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[jacks]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[jone]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AWS]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createNewContact_Test -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.hubspot.tests.ContactsPageTest@66a3ffec]" name="teardown" is-config="true" duration-ms="1981" started-at="2020-10-30T04:37:02Z" finished-at="2020-10-30T04:37:04Z">
+        </test-method> <!-- login_Test -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.hubspot.tests.LogInPageTest@2f8f5f62]" name="teardown" is-config="true" duration-ms="1710" started-at="2020-11-03T09:28:10Z" finished-at="2020-11-03T09:28:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.qa.hubspot.tests.ContactsPageTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.qa.hubspot.tests.LogInPageTest -->
+    </test> <!-- Regression Functional Test -->
+  </suite> <!-- Hubspot App Regression Test Suite -->
 </testng-results>

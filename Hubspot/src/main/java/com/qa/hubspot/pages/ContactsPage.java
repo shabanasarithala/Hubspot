@@ -41,7 +41,7 @@ public class ContactsPage {
 	}
 	
 	
-	public void createNewContact(String emailId , String firstname , String lastname , String jobtitle) {
+	public String createNewContact(String emailId , String firstname , String lastname , String jobtitle) {
 		eu.waitForElementToBePresent(createContact,  10);
 		eu.click(createContact);
 		eu.waitForElementToBePresent(email,  10).sendKeys( emailId);
@@ -50,8 +50,13 @@ public class ContactsPage {
 		eu.waitForElementToBePresent(jobTitle,  10).sendKeys( jobtitle);
 		eu.waitForElementToBeClickable(createContactForm,  10);
 		jsUtil.clickElementByJS( eu.get_element(createContactForm));
+		String fullName = firstname +" "+ lastname;
+		String nameXpath = "(//span[text()='"+fullName+"'])[2]";
 		eu.waitForElementToBePresent(contactsNavigation, 15);
+	    String	contactName = eu.get_text( By.xpath(nameXpath)).trim();
+		
 		eu.click(contactsNavigation);
+		return contactName;
 		
 		
 	}

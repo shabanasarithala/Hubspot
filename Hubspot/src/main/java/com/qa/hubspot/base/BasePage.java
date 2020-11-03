@@ -1,10 +1,14 @@
 package com.qa.hubspot.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -21,6 +25,13 @@ public class BasePage {
 	public WebDriver driver;
 	public Properties prop;
 	OptionsManager optionsManager;
+	public static ThreadLocal<WebDriver> t1driver = new ThreadLocal<WebDriver>();
+	
+	public static synchronized WebDriver getDriver() {
+		return t1driver.get();
+ 
+		
+	}
 	
 	/**
 	 *  This method is used to initialize the driver
@@ -36,27 +47,31 @@ public class BasePage {
 		 
 		if(browser.equalsIgnoreCase( "chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver(optionsManager.getChromeOptions());
+			//driver = new ChromeDriver(optionsManager.getChromeOptions());
+			t1driver.set(new ChromeDriver(optionsManager.getChromeOptions()));
 		}
 		
 		else if(browser.equalsIgnoreCase( "firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver(optionsManager.getFirefoxOptions());
+			//driver = new FirefoxDriver(optionsManager.getFirefoxOptions());
+			t1driver.set( new FirefoxDriver(optionsManager.getFirefoxOptions()));
 		}
 		
 		else if(browser.equalsIgnoreCase("safari")) {
 			WebDriverManager.getInstance( SafariDriver.class).setup();
+			t1driver.set( new SafariDriver());
 		}
 		else {
 			System.out.println("browser not found please pass correct browser name");
 		}
-		
-		driver.get(  prop.getProperty( "url"));
-		 TimeUtil.shortWait();
-		driver.manage().deleteAllCookies();
+		getDriver().manage().deleteAllCookies();
 		 
-		driver.manage().window().maximize();
-		return driver;
+		getDriver().manage().window().maximize();
+		
+		getDriver().get(  prop.getProperty( "url"));
+		 TimeUtil.shortWait();
+		
+		return getDriver();
 		
 		
 	}
@@ -85,6 +100,20 @@ public class BasePage {
 		  
 		  return prop;
 		
+	}
+	
+	public String getScreenshot() {
+		File src = ((TakesScreenshot)getDriver()).getScreenshotAs( OutputType.FILE);
+		String path = System.getProperty( "user.dir")+"/screenshots/"+System.currentTimeMillis()+".png";
+		File destination = new File(path);
+		
+		try {
+			FileUtils.copyFile(src, destination);
+		} catch (IOException e) {
+			 
+			e.printStackTrace();
+		}
+		return path;
 	}
 	
 	

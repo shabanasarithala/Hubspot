@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Hubspot App Regression Test Suite]">
+  <listeners>
+    <listener class-name="com.qa.hubspot.TestListeners.PdfListener"/>
+    <listener class-name="com.qa.hubspot.TestListeners.ExtentReportListener"/>
+  </listeners>
+  <test name="Regression Functional Test(failed)">
     <classes>
-      <class name="com.qa.hubspot.tests.ContactsPageTest">
+      <class name="com.qa.hubspot.tests.LogInPageTest">
         <methods>
-          <include name="verify_ContactsPageTitle_Test"/>
-          <include name="createNewContact_Test"/>
-          <include name="teardown"/>
+          <include name="verifysignup_link_Test"/>
           <include name="setup"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- com.qa.hubspot.tests.ContactsPageTest -->
+      </class> <!-- com.qa.hubspot.tests.LogInPageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Regression Functional Test(failed) -->
+</suite> <!-- Failed suite [Hubspot App Regression Test Suite] -->
