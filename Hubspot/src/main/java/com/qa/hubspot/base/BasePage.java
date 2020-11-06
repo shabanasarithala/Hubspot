@@ -86,8 +86,30 @@ public class BasePage {
 	public Properties initialize_properties() {
 		
 		  prop = new Properties();
+		  String env = null;
+		  String path = null;
 		  try {
-			FileInputStream ip = new FileInputStream( ".\\src\\main\\java\\com\\qa\\hubspot\\config\\config.properties");
+			   
+			  env = System.getProperty("env");
+				if (env == null) {
+					path = "./src/main/java/com/qa/hubspot/config/config.properties";
+				} else {
+					switch (env) {
+					case "qa":
+						path = "./src/main/java/com/qa/hubspot/config/qa.config.properties";
+						break;
+					case "dev":
+						path = "./src/main/java/com/qa/hubspot/config/dev.config.properties";
+						break;
+					case "stage":
+						path = "./src/main/java/com/qa/hubspot/config/stage.config.properties";
+						break;
+					default:
+						System.out.println("Please pass the correct env value...");
+						break;
+					}
+				}
+			FileInputStream ip = new FileInputStream(   path);
 			 prop.load(ip);
 			
 		} catch (FileNotFoundException e) {
